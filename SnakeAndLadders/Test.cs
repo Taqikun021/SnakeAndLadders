@@ -13,8 +13,5 @@ public class Test
             var player = new Player(Console.ReadLine() ?? $"Player{i+1}");
             players.Add(player);
         }
-
-        var game = new Game(players);
-        game.StartGame();
     }
 }
