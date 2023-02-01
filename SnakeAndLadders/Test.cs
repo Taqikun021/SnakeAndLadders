@@ -16,7 +16,7 @@ public class Test
         for (var i = 0; i < theNumberOfPlayers; i++) Players.Add(new Player($"Player{i + 1}"));
         List<Obstacle>? source;  
   
-        using (var r = new StreamReader("obstacles.json"))  
+        using (var r = new StreamReader("../../../json/obstacles.json"))  
         {  
             var json = r.ReadToEnd();  
             source = JsonSerializer.Deserialize<List<Obstacle>>(json);  
@@ -42,15 +42,15 @@ public class Test
         }
         Console.WriteLine($"{Players[0].Name} lose!");
         var date = (int) DateTime.Now.Ticks;
-        ExportJson(date);
-        Console.WriteLine($"The game today has been recorded in File Game{date}.json");
+        ExportMove(date);
+        Console.WriteLine($"The game today has been recorded in File Game-{date}.json");
         Console.WriteLine("--LAST LINE OF THE GAME--");
     }
 
-    private static void ExportJson(int date)
+    private static void ExportMove(int date)
     {
         var jsonString = JsonSerializer.Serialize(Steps, new JsonSerializerOptions { WriteIndented = true});
-        using var outputFile = new StreamWriter($"Game-{date}.json");
+        using var outputFile = new StreamWriter($"../../../json/Game-{date}.json");
         outputFile.WriteLine(jsonString);
     }
 
