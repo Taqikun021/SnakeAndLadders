@@ -76,6 +76,7 @@ public class Test
                 break;
             case 100:
                 Console.WriteLine($"{player.Name} WIN!");
+                MovePlayer(player, total);
                 Players.Remove(player);
                 break;
             default:
