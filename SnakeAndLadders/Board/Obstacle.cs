@@ -2,16 +2,12 @@
 
 public class Obstacle
 {
-    private readonly int _start;
-    private readonly int _end;
+    public int Start { get; }
+    public int End { get; }
 
     public Obstacle(int start, int end)
     {
-        _start = start;
-        _end = end;
+        Start = start;
+        End = end;
     }
-
-    public int GetStart() => _start;
-
-    public int GetEnd() => _end;
 }

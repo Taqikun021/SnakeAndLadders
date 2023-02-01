@@ -2,9 +2,12 @@
 
 public class Player
 {
-    private readonly string _name;
+    public string Name { get; }
+    public int Position { get; set; }
 
-    public Player(string name) => _name = name;
-
-    public string GetName() => _name;
+    public Player(string name)
+    {
+        Name = name;
+        Position = 0;
+    }
 }
